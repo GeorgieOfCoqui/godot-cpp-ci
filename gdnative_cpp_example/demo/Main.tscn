@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://bbmkufbt68k6p"]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://bin/gdexample.gdns" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://rciion0v7mdj" path="res://icon.png" id="1_ri3c8"]
 
 [node name="Main" type="Node"]
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-centered = false
-script = ExtResource( 2 )
+[node name="GDExample" type="GDExample" parent="."]
+texture = ExtResource( "1_ri3c8" )

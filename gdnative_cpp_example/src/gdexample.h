@@ -1,28 +1,35 @@
-#ifndef GDEXAMPLE_H
-#define GDEXAMPLE_H
+#ifndef GDEXAMPLE_CLASS_H
+#define GDEXAMPLE_CLASS_H
 
-#include <Godot.hpp>
-#include <Sprite.hpp>
+#include <godot_cpp/variant/utility_functions.hpp>
 
-namespace godot {
+#include <godot_cpp/core/binder_common.hpp>
+#include <godot_cpp/core/class_db.hpp>
 
-class GDExample : public Sprite {
-    GODOT_CLASS(GDExample, Sprite)
+#include <godot_cpp/classes/sprite2D.hpp>
 
-private:
-    float time_passed;
+namespace godot
+{
 
-public:
-    static void _register_methods();
+    class GDExample : public Sprite2D
+    {
+        GDCLASS(GDExample, Sprite2D)
 
-    GDExample();
-    ~GDExample();
+    private:
+        float time_passed;
 
-    void _init(); // our initializer called by Godot
+    protected:
+        static void _bind_methods();
 
-    void _process(float delta);
-};
+    public:
+        GDExample();
+        ~GDExample();
+
+        void _init(); // our initializer called by Godot
+
+        void _process(float delta);
+    };
 
 }
 
-#endif
+#endif // ! GDEXAMPLE_CLASS_H
